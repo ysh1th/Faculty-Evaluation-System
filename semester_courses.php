@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('includes/db.php');
+include('db.php');
 
 $facultyId = $_SESSION['faculty_id'];
 $year = $_GET['year'];
