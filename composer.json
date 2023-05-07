@@ -4,10 +4,5 @@
     "ext-pdo": "*",
     "ext-pdo_sqlite": "*"
   },
-  "scripts": {
-    "post-install-cmd": [
-      "php artisan clear-compiled",
-      "chmod -R 777 public/"
-    ]
-  }
+
 }
