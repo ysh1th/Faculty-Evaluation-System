@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('includes/db.php');
+include('db.php');
 
 if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'student') {
     header("Location: login.php");
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_stmt_bind_param($stmt, 'iiiiiiss', $studentId, $facultyId, $courseId, $criteria1, $criteria2, $criteria3, $year, $semester);
 
     if (mysqli_stmt_execute($stmt)) {
-        header("Location: student/student_dashboard.php");
+        header("Location: student_dashboard.php");
         exit;
     } else {
         echo "Error: " . mysqli_error($connection);
