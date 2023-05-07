@@ -5,20 +5,20 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-require_once 'includes/db.php';
-include('includes/header.php');
-// include('student/student_dashboard.php');
-// include('faculty/faculty_dashboard.php');
-// include('admin/admin_dashboard.php');
+require_once 'db.php';
+include('header.php');
+// include('student_dashboard.php');
+// include('faculty_dashboard.php');
+// include('admin_dashboard.php');
 
 
 if (isset($_SESSION['User_id'])) {
     if ($_SESSION['user_role'] == 'student') {
         header("Location: student_dashboard.php");
     } elseif ($_SESSION['User_id'] == 'faculty') {
-        header("Location: faculty/faculty_dashboard.php");
+        header("Location: faculty_dashboard.php");
     } elseif ($_SESSION['User_id'] == 'admin') {
-        header("Location: admin/admin_dashboard.php");
+        header("Location: admin_dashboard.php");
     }
 } else { $_SESSION['User_id'] = null; }
 // above code allows user to be taken to dashboard.php if already logged in :)
@@ -79,13 +79,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Redirect based on the role
                 if ($User['role'] == 'student') {
                     $studentName = $User['name'];
-                    header("Location: student/student_dashboard.php");
+                    header("Location: student_dashboard.php");
                 } elseif ($User['role'] == 'faculty') {
                     $facultyName = $User['faculty_name'];
-                    header("Location: faculty/faculty_dashboard.php");
+                    header("Location: faculty_dashboard.php");
                 } elseif ($User['role'] == 'admin') {
                     $adminName = $User['admin_name'];
-                    header("Location: admin/admin_dashboard.php");
+                    header("Location: admin_dashboard.php");
                 }
             }
         } else {
