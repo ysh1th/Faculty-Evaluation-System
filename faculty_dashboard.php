@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Include your database connection file
-include('includes/db.php');
+include('db.php');
 
 if (!isset($_SESSION['User_id']) || $_SESSION['user_role'] !== 'faculty') {
     header("Location: login.php");
