@@ -21,7 +21,7 @@ $result = mysqli_query($connection, $query);
 $courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 // Fetch the courses the faculty is currently teaching
-$query = "SELECT course_id FROM course-teaching WHERE faculty_id = $faculty_id";
+$query = "SELECT c.course_name FROM course as c JOIN course_teaching as ct ON c.course_id = ct.course_id WHERE ct.faculty_id = $faculty_id";
 $result = mysqli_query($connection, $query);
 $faculty_courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
 $faculty_courses_ids = array_column($faculty_courses, 'course_id');
