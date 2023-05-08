@@ -12,7 +12,9 @@ $student_id = $_POST['id']; // GK: POST is used when the data is submitted from 
 // HTML form using HTTP POST method
 
 // Retrieve the student data from the database
-$query = "SELECT * FROM student WHERE id = $student_id";
+//$query = "SELECT * FROM student WHERE id = $student_id";
+$query_courses = "SELECT c.course_name FROM course as c JOIN enrollment as e ON c.course_id = e.course_id WHERE e.student_id = $student_id";
+
 $result = mysqli_query($connection, $query);
 $student = mysqli_fetch_assoc($result);
 
