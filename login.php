@@ -11,9 +11,9 @@ include('header.php');
 if (isset($_SESSION['User_id'])) {
     if ($_SESSION['user_role'] == 'student') {
         header("Location: student_dashboard.php");
-    } elseif ($_SESSION['User_id'] == 'faculty') {
+    } elseif ($_SESSION['user_role'] == 'faculty') {
         header("Location: faculty_dashboard.php");
-    } elseif ($_SESSION['User_id'] == 'admin') {
+    } elseif ($_SESSION['user_role'] == 'admin') {
         header("Location: admin_dashboard.php");
     }
 } else { $_SESSION['User_id'] = null; }
