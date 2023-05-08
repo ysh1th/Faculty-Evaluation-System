@@ -18,7 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $criteria1 = $_POST['criteria1'];
     $criteria2 = $_POST['criteria2'];
     $criteria3 = $_POST['criteria3'];
-
+    
+    $query = "UPDATE enrollment
+    SET evaluated = 'evaluated'
+    WHERE student_id = $studentId AND course_id = $courseId;";
+    $result = mysqli_query($connection, $query);
+    
     $insertEvaluation = "INSERT INTO faculty_eval (student_id, faculty_id, course_id, criteria_rate1, criteria_rate2, criteria_rate3, year, sem) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($connection, $insertEvaluation);
 
