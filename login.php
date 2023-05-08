@@ -40,9 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // $sql = "SELECT User_id, password, role FROM `Users` WHERE User_id = '$Id' AND role = '$Role'";
         $sql = "SELECT u.User_id, u.password, u.role
         FROM Users u
-        -- JOIN student s ON u.User_id = s.user_id
-        -- JOIN faculty f ON u.User_id = f.user_id
-        -- JOIN admin a ON u.User_id = a.user_id
+        JOIN student s ON u.User_id = s.user_id
+        JOIN faculty f ON u.User_id = f.user_id
+        JOIN admin a ON u.User_id = a.user_id
         WHERE u.User_id = '$Id' AND u.role = '$Role'";
 
         $result = mysqli_query($connection, $sql);
