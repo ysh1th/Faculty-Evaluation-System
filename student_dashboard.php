@@ -3,7 +3,7 @@ session_start();
 require_once 'db.php';
 
 if (!isset($_SESSION['User_id']) || $_SESSION['user_role'] !== 'student') {
-    header("Location: login.php");
+    header("Location: ../login.php");
 }
 $user_id = $_SESSION['User_id'];
 $studentId = "SELECT student_id from student AS s JOIN Users AS u ON s.user_id = u.User_id WHERE u.User_id = '$user_id'";
