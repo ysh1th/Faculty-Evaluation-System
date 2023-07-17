@@ -1,4 +1,15 @@
 {
+  "name": "your/package-name",
+  "description": "Your package description",
+  "license": "proprietary",
+  "require": {
+    "php": ">=7.4",
+    "ext-pdo": "*",
+    "ext-pdo_sqlite": "*"
+  }
+}
+
+{
     "_readme": [
         "This file locks the dependencies of your project to a known state",
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
